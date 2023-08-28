@@ -1,0 +1,18 @@
+Calculate the electricity bill when input is given as A.
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+    int A =sc.nextInt();
+    double bill=0.0;
+    if ((A>=1) && (A<=50))
+    bill=bill+(1*A);
+    else if ((A>=51) && (A<=100))
+    bill=bill+(1*50)+(A-50)*2;
+    else 
+    bill=bill+(1*50)+(2*50)+(A-100)*4;
+  System.out.print(bill);
+
+  }
+}
