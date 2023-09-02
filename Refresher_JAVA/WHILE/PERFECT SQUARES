@@ -1,0 +1,40 @@
+Given an integer N as input, print perfect squares till N.
+Perfect square -> an integer whose square root is an integer
+
+Input: N=30
+Output: 1 4 9 16 25
+
+mine code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    int N=sc.nextInt();
+    int i=1;
+    while((i*i)<=N){
+      if ((i*i) % i == 0)
+      {
+        System.out.print(i*i + " ");
+      }
+      i++;
+    }
+  } 
+}
+
+sir's code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+     int N=sc.nextInt();
+     int i=1;
+     while(i*i<=N){
+      System.out.print(i*i + " ");
+      i++;
+     }
+   
+  } 
+}
+   
