@@ -1,0 +1,38 @@
+Given an integer N, print multiples of 4 till N
+Input: N=18
+Output: 4 8 12 16
+
+mine code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int N=sc.nextInt();
+      int i=1;
+      while(i<=N){
+        if(i%4==0)
+        {
+          System.out.print(i+" ");
+        }
+        i++;
+      }
+    }
+  }
+
+sir's code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int N=sc.nextInt();
+      int i=4;
+      while(i<=N)
+      {
+        System.out.print(i+ " ");
+        i=i+4;
+      }
+      }
+    }
+  
