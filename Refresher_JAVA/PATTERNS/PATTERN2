@@ -1,0 +1,52 @@
+Given N as input, print the following pattern:
+
+N=4             N=3
+*..*            *.*
+*..*            *.*
+*..*            *.*
+*..*
+
+where . means space
+
+mine code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+      int N=sc.nextInt();
+      for(int i=1;i<=N;i++){
+        for(int j=1;j<=N;j++)
+        {
+          if ((j==1) || (j==N)){
+            System.out.print("*");
+          }
+          else{
+            System.out.print(" ");
+          }
+        }
+          System.out.println();
+        }
+      }
+  }
+
+sir's code:
+
+spaces= N-2 stars
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+      int N=sc.nextInt();
+      for(int row=1;row<=N;row++){
+        System.out.print("*");
+        for(int space=1;space<=N-2;space++){
+          System.out.print(" ");
+        }
+        System.out.print("*");
+        System.out.println();
+      }
+  }
+}
+
