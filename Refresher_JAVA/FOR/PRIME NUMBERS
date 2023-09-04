@@ -1,0 +1,26 @@
+Print all whether N is prime or not prime.
+Remember: 1 is neither prime nor composite.
+Definition of Prime number: Number with exactly 2 factors.
+
+mine code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+      int N=sc.nextInt();
+      int count =0;
+      for (int i=1;i<=N;i++){
+        if(N%i==0){
+          count++;
+        }
+      }
+      if(count==2){
+        System.out.print("Prime");
+      }
+      else{
+        System.out.print("Not Prime");
+      } 
+  }
+}
+
