@@ -1,0 +1,40 @@
+Given N as input, print the below pattern:
+N=4
+********
+***  ***
+**    **
+*      *
+
+sir's code:
+  
+row star1 space star2
+1    4     0     4
+2    3     2     3
+3    2     4     2
+4    1     6     1
+
+star+row=N+1
+star= N+1-row
+
+space= 2*row-2
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int N=sc.nextInt();
+      for(int row=1;row<=N;row++){
+        for(int star1=1;star1<=N-row+1;star1++){
+          System.out.print("*");
+        }
+        for(int space=1;space<=2*row-2;space++){
+          System.out.print(" ");
+        }
+         for(int star1=1;star1<=N-row+1;star1++){
+          System.out.print("*");
+        }
+        System.out.println();
+      }
+     
+  }
+}
