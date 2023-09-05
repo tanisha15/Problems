@@ -1,0 +1,39 @@
+Given N as input, print the following pattern:
+
+N=3       N=4 
+..*       ...*
+.**       ..**
+***       .***
+          ****
+
+where . denotes space
+
+mine code:
+
+row space star
+1     2    1
+2     1    2
+3     0    3 
+
+row+space=N
+space=N-row
+
+star=row
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int N=sc.nextInt();
+      for(int row=1;row<=N;row++){
+        for(int space=1;space<=N-row;space++){
+          System.out.print(" ");
+        }
+        for(int star=1;star<=row;star++){
+          System.out.print("*");
+        }
+        System.out.println();
+      }
+  }
+}
+
