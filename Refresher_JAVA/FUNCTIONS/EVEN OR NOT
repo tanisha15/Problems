@@ -1,0 +1,31 @@
+Given an integer as argument, return whether its even or not.
+n=12->true
+n=5->false
+
+mine code:
+
+import java.util.*;
+public class Main{
+  public static boolean even(int N){
+    if(N%2==0){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    boolean y= even(n);
+    if(y==true){
+      System.out.println("Even");
+    }
+    else{
+      System.out.println("Not Even");
+    }
+  }  
+}
+
+
+  
