@@ -63,3 +63,40 @@ row zero non zero digits
 1    4        1
 2    2        3
 3    0        5
+
+this code was copy pasted
+
+import java.util.*;
+
+class Main {
+
+    public static void main(String args[]) {
+        Scanner scn = new Scanner(System.in);
+        
+        int n = scn.nextInt();
+        
+        // Loop for N rows
+        for (int i = 1; i <= n; i++)
+    	{
+    	    // Print leading 0s
+    		int spaces = n - i;
+    		for (int j = 1; j <= spaces; j++){
+    			 System.out.print("0 ");
+    		}
+    		// Print non-zero number series
+    		int lim = 2 * i - 1;
+            int cnt = 1;
+            for (int j = 1; j <= lim; j++)
+    		{
+    		    System.out.print((n-i+1)*cnt + " ");
+                cnt++;
+    		}
+    		// Print trailing 0s
+    		for (int j = 1; j <= spaces; j++){
+    			System.out.print("0 ");
+    		}
+        	System.out.println();
+    	}
+    }
+
+}
