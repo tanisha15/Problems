@@ -1,0 +1,91 @@
+Problem Description
+
+Take an integer N as input, print the corresponding Half Diamond pattern with 2*N - 1 rows.
+
+For example if N = 5 then pattern will be like:
+
+* 
+**
+***
+****
+*****
+****
+***
+**
+*
+NOTE: There should be no spaces after any * .
+
+
+Problem Constraints
+
+2 <= N <= 100
+
+
+
+Input Format
+
+First and only line of input contains a single integer N.
+
+
+
+Output Format
+
+Output the Half Diamond pattern corresponding to the given N.
+
+
+
+Example Input
+
+Input 1:
+
+ 2
+Input 2:
+
+ 3
+
+
+Example Output
+
+Output 1:
+
+ * 
+ **
+ *
+Output 2:
+
+ *
+ **
+ ***
+ **
+ *
+
+
+Example Explanation
+
+ Print the pattern as described.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int N=sc.nextInt();
+       for(int row=1;row<=N;row++){
+           for(int star=1;star<=row;star++){
+               System.out.print("*");
+           }
+           System.out.println();
+       }
+
+       for(int row=N-1;row>=1;row--){
+           for(int star=1;star<=row;star++){
+               System.out.print("*");
+           }
+       System.out.println();
+       }
+    }
+}                                                                                                                                                                                               
+      
