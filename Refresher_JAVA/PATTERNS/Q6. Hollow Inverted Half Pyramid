@@ -1,0 +1,98 @@
+Problem Description
+
+Given an integer N as input, print the corresponding Hollow Inverted Half Pyramid pattern for N.
+
+For example if N = 6 then pattern will be like:
+
+******
+*   *
+*  *
+* *
+**
+*
+
+
+Problem Constraints
+
+1 <= N <= 100
+
+
+
+Input Format
+
+First and only line of input contains a single integer N.
+
+
+
+Output Format
+
+Output the Hollow Inverted Half Pyramid pattern corresponding to the given N.
+
+
+
+Example Input
+
+Input 1:
+
+ 2
+Input 2:
+
+ 3
+Input 3:
+
+ 4
+
+
+Example Output
+
+Output 1:
+
+ **
+ *
+Output 2:
+
+ ***
+ **
+ *
+Output 3:
+
+ ****
+ * *
+ **
+ *
+
+
+Example Explanation
+
+ Print the pattern as described.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int N=sc.nextInt();
+        for(int row=1;row<=N;row++){
+            if (row==1) {
+                for(int star=1;star<=N;star++){
+                    System.out.print("*");
+                }
+            }
+            else if (row==N){
+                System.out.print("*");
+            }
+            else{
+                System.out.print("*");
+                for(int space1=1;space1<=N-row-1;space1++){
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
+}
