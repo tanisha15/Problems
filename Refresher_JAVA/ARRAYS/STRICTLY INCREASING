@@ -1,0 +1,57 @@
+Given an integer array as input, check whether it is strictly increasing.
+
+For e.g.
+
+arr=[0,2,6,7,8] -> True
+arr=[0,2,2,6,7,7] -> False
+arr=[0,-5,2,-1,1] -> False
+
+mine code:
+
+import java.util.*;
+import java.lang.*;
+public class Main {
+      public static boolean isIncrease (int arr[]){
+        int n=arr.length;
+        for(int i=1;i<n;i++){
+          if(arr[i-1] >= arr[i]){
+            return false;
+          }
+      }
+      return true;
+      }
+
+      public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+          a[i]=sc.nextInt();
+        }
+        boolean ans=isIncrease(a);
+        if (ans==true){
+          System.out.println("Strictly increasing");
+        }
+        else{
+          System.out.println("Not Strictly increasing");
+        }
+      }
+}
+
+sir's code:
+
+if you use-> 
+for(int i=0;i<n;i++){
+if (arr[i]>=arr[i+1])
+}
+
+you will get error-> index out of bound 
+
+therefore to prevent that use->
+for(int i=0;i<n-1;i++){
+if (arr[i]>=arr[i+1])
+}
+
+
+
+
