@@ -1,0 +1,30 @@
+Given an integer array as input in a function, return min
+
+mine code:
+
+import java.util.*;
+import java.lang.*;
+public class Main {
+
+  public static int min(int n, int arr[]){
+    int min=arr[0];
+    n=arr.length;
+    for(int i=0;i<n;i++){
+    if(min>arr[i]){
+      min=arr[i];
+    }
+  }
+  return min;
+  }
+
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+      int m=min(n,arr);
+      System.out.println(m);
+}
+}
