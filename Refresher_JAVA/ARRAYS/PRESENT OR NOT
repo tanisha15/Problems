@@ -1,0 +1,42 @@
+Given an array find whether K is present in the array. Use function.
+
+mine code:
+
+import java.util.*;
+import java.lang.*;
+public class Main {
+
+  public static boolean find(int arr[], int k){
+    int n=arr.length;
+    int found=0;
+    for(int i=0;i<n;i++){
+      if(arr[i]==k){
+        found=1;
+        break;
+      }
+    }
+    if (found==1){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int arr[]=new int[n];
+    int k=sc.nextInt();
+    for(int i=0;i<n;i++){
+      arr[i]=sc.nextInt();
+    }
+    boolean result= find(arr,k);
+    if(result==true){
+      System.out.print("Element found");
+    }
+    else{
+      System.out.print("Element not found");
+    }
+  }
+}
