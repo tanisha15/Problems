@@ -1,0 +1,37 @@
+Print the column wise maximum for 2D array.
+
+sir's code- this is important
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      int N=sc.nextInt();
+      int M=sc.nextInt();
+      int arr[][]=new int[N][M];
+      for(int row=0;row<N;row++){
+        for(int col=0;col<M;col++){
+            arr[row][col]=sc.nextInt();
+        }
+      }
+
+      int ans[]=new int[M];
+
+      for(int col=0;col<M;col++){
+        int max= arr[0][col];
+        for(int row=0;row<N;row++){
+            if(max<arr[row][col]){
+              max=arr[row][col];
+            }
+            ans[col]=max;
+        }
+      }
+
+      for(int i=0;i<ans.length;i++){
+        System.out.print(ans[i]+ " ");
+      }
+
+    }
+}
