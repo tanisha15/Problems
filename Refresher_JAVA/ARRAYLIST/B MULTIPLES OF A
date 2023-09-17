@@ -1,0 +1,26 @@
+Given 2 integers A and B as input, return an arraylist containing first B multiples of A.
+
+For e.g:
+
+Input : A=2, B=4
+Output: [2,4,6,8]
+2*1, 2*2, 2*3, 2*4
+
+mine code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int a=sc.nextInt();
+      int b=sc.nextInt();
+      ArrayList<Integer> arr= new ArrayList<Integer>();
+
+      for(int i=1;i<=b;i++){
+        int val=a*i;
+        arr.add(val);
+      }
+
+      System.out.print(arr);
+  }
+}
