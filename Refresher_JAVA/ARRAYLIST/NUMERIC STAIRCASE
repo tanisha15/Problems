@@ -10,3 +10,40 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+mine code:
+
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int n=sc.nextInt();
+      ArrayList<ArrayList<Integer>> arr = new ArrayList();
+      for(int row=0;row<n;row++){
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+        arr.add(ans);
+        for(int col=0;col<=row;col++){
+          ans.add(col+1);
+          System.out.print(ans.get(col)+" ");
+        }
+        System.out.println();
+      }
+  }
+}
+
+sir's code:
+
+public static ArrayList< ArrayList<Integer> > staircase(int n) {
+    ArrayList< ArrayList<Integer> > ans =
+        new ArrayList< ArrayList<Integer> >();
+        // if row = 1 -> [1]
+        // row = 2 -> [1, 2]
+    for (int row = 1; row <= n; ++row) {
+      ArrayList<Integer> rw = new ArrayList<Integer>();
+      for (int col = 1; col <= row; ++col) {
+        rw.add(col);
+      }
+      ans.add(rw);
+    }
+    return ans;
+  }
