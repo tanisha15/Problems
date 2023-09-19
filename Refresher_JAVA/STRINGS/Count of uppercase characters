@@ -1,0 +1,40 @@
+Given a string, print count of upper case characters
+
+mine code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      String s=sc.next();
+      int l=s.length();
+      int count=0;
+      for(int i=0;i<l;i++){
+        for(char j='A'; j<='Z'; j++){
+          if(s.charAt(i)==j){
+            count++;
+          }
+        }
+      }
+      System.out.print(count);
+  }
+}
+
+sir's code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      String s=sc.next();
+      int l=s.length();
+      int count=0;
+      for(int i=0;i<l;i++){
+        char ch=s.charAt(i);
+        if(ch>='A' && ch<='Z'){
+          count++;
+        }
+      }
+      System.out.print(count);
+  }
+}
