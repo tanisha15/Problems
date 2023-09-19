@@ -1,0 +1,46 @@
+Given a string print count of non-alphanumeric characters
+
+mine code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      String s=sc.next();
+      int l=s.length();
+      int count=0;
+      for(int i=0;i<l;i++){
+        char val=s.charAt(i);
+        if ((val>='A' && val<='Z') || (val>='a' && val<='z') || (val>='1' && val<='9')) {
+          i++;
+        }
+        else{
+          count++;
+        }
+      }
+    System.out.print(count);
+  }
+}
+
+sir's code:
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      String s=sc.next();
+      int l=s.length();
+      int count=0;
+      for(int i=0;i<l;i++){
+        char val=s.charAt(i);
+        if (
+          !(val>='A' && val<='Z') &&
+          !(val>='a' && val<='z') &&
+          !(val>='0' && val<='9')
+        ){
+          count++;
+        }
+      }
+    System.out.print(count);
+  }
+}
