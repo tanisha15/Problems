@@ -47,3 +47,20 @@ Output 2:
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(ArrayList<ArrayList<Integer>> A, int B) {
+        int n=A.size();
+        int m=A.get(0).size();
+        int num=0;
+        ArrayList<ArrayList<Integer>> ans= new ArrayList();
+        for(int row=0;row<n;row++){
+            ArrayList <Integer> ls= new ArrayList();
+            ans.add(ls); //adding the row of the first arraylist ls in the 2D array ans
+            for(int col=0;col<m;col++){
+                num=A.get(row).get(col)*B;
+                ans.get(row).add(num); //adding the element in the first row of the arraylist
+            }
+        }
+        return ans;
+    }
+}
