@@ -1,0 +1,25 @@
+Problem Description
+You are given a matrix A, you have to return an array containing sum of each row elements followed by sum of each column elements of the matrix.
+
+NOTE: If the matrix given is of size (N x M), then the array you return would be of size (N + M), where first N elements contain the sum of each N rows, and the next M elements contain the sum of each M columns.
+
+
+Problem Constraints
+1 <= A.size() <= 1000
+
+1 <= A[i].size() <= 1000
+
+1 <= A[i][j] <= 1000
+
+
+
+Input Format
+First argument is a 2D matrix of integers.
+
+
+
+Output Format
+You have to return a 1D list of integers after doing required operations.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
