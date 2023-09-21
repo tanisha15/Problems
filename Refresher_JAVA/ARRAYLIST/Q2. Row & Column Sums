@@ -23,3 +23,29 @@ You have to return a 1D list of integers after doing required operations.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+public class Solution {
+    public ArrayList<Integer> solve(ArrayList<ArrayList<Integer>> A) {
+
+        int N=A.size();
+        int M=A.get(0).size();
+        ArrayList<Integer> ans = new ArrayList<Integer>(N+M);
+
+        for(int row=0;row<N;row++){
+            int rsum=0;
+            for(int col=0;col<M;col++){
+                rsum=rsum+A.get(row).get(col);
+            }
+            ans.add(rsum);
+        }
+
+        for(int col=0;col<M;col++){
+            int csum=0;
+            for(int row=0;row<N;row++){
+                csum=csum+A.get(row).get(col);
+            }
+            ans.add(csum);
+        }
+
+        return ans;
+    }
+}
