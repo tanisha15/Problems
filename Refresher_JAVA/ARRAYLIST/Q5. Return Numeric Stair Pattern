@@ -1,0 +1,47 @@
+Problem Description
+Given an integer A in the function parameter.
+Return a 2D array with A rows such that the i-th row has numbers from 1 to i.
+
+
+Problem Constraints
+1 <= A <= 103
+
+
+
+Input Format
+Only argument A is an integer.
+
+
+
+Output Format
+Return a 2D array of integers
+
+
+
+Example Input
+Input 1:
+A = 3
+Input 2:
+A = 4
+
+
+Example Output
+Output 1:
+[[1], [1, 2], [1, 2, 3]]
+Output 2:
+[[1], [1, 2], [1, 2, 3], [1, 2, 3, 4]]
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(int A) {
+        ArrayList<ArrayList<Integer>> ans = new ArrayList();
+        for(int row=0;row<A;row++){
+            ans.add(new ArrayList());
+            for(int col=0;col<=row;col++){
+                ans.get(row).add(col+1);
+            }
+        }
+        return ans;
+    }
+}
