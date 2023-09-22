@@ -1,0 +1,59 @@
+Problem Description
+Given 2 arrays of integers A and B
+Return a 2D array of integers such that i-th row of the array contains list of values in A such that A[j]%B[i]==0 in A in sequential order
+
+
+Problem Constraints
+1 <= |A| <= 103
+
+1 <= |B| <= 103
+
+1 <= A[i] <= 105
+
+1 <= B[i] <= 105
+
+
+
+Input Format
+The two arguments A and B are array of integers.
+
+
+
+Output Format
+Return a 2D array of integers.
+
+
+
+Example Input
+Input 1:
+A = [1, 2, 3, 4]
+B = [1, 2]
+Input 2:
+A = [2, 5, 9, 3, 8]
+B = [3, 2]
+
+
+Example Output
+Output 1:
+[ [1, 2, 3, 4 ], [ 2, 4] ]
+Output 2:
+[ [9, 3 ], [ 2, 8] ]
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
+        ArrayList<ArrayList<Integer>> ans = new ArrayList();
+        for(int row=0;row<B.size();row++){
+            ans.add(new ArrayList());
+            for(int col=0;col<A.size();col++){
+                if(A.get(col)%B.get(row)==0){
+                    int num=A.get(col); //A is single arraylist-> consider same as A[j]
+                    ans.get(row).add(num);
+                }
+            }
+        }
+        return ans;
+
+    }
+}
