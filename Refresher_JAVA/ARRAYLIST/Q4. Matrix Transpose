@@ -1,0 +1,54 @@
+Problem Constraints
+1 <= A.size() <= 1000
+
+1 <= A[i].size() <= 1000
+
+1 <= A[i][j] <= 1000
+
+
+
+Input Format
+First argument is a 2D matrix of integers.
+
+
+
+Output Format
+You have to return the Transpose of this 2D matrix.
+
+
+
+Example Input
+Input 1:
+
+A = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
+Input 2:
+
+A = [[1, 2],[1, 2],[1, 2]]
+
+
+Example Output
+Output 1:
+
+[[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+Output 2:
+
+[[1, 1, 1], [2, 2, 2]]
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(ArrayList<ArrayList<Integer>> A) {
+        ArrayList<ArrayList<Integer>> ans = new ArrayList();
+        int n=A.size();
+        int m=A.get(0).size();
+        for(int col=0; col<m; col++){
+            ans.add(new ArrayList());
+            for(int row=0; row<n;row++){
+                int num=A.get(row).get(col);  // assume it like A[i][j] and store the element in num                
+                ans.get(col).add(num);
+            }
+        }
+
+        return ans;
+    }
+}
