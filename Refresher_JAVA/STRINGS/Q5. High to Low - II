@@ -1,0 +1,44 @@
+Problem Description
+
+You are given uppercase string (S) and you have to return a string that is the lower case form of S.
+
+Uppercase strings are those which have all letters in uppercase (Example: MACHINE)
+
+Lowercase strings are those which have all letters in lowercase (Example: machine)
+
+Problem Constraints
+
+1 <= S.size() <= 1000
+Input Format
+
+First and only argument containing a uppercase string **S**.
+Output Format
+
+You have to return lowercase form of input string.
+Example Input
+
+Input 1:
+INTERVIEWBIT
+Input 2:
+SCALER
+Example Output
+
+Output 1:
+interviewbit
+Output 2:
+scaler
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Solution {
+    public String solve(String A) {
+        int l=A.length();
+        String ans="";
+        for(int i=0;i<l;i++){
+            char ch=A.charAt(i);
+            int a= (int)ch + 32;
+            ans= ans + (char)a;
+        }
+        return ans;
+    }
+}
