@@ -1,0 +1,71 @@
+Problem Description
+
+You are given a character string A having length N.
+
+The string consists of 2 types of characters:
+
+Alphabets : ['a'-'z', 'A'-'Z']
+Digits: ['0'-'9']
+You have to tell the count of characters of the maximum occuring character type.
+
+
+
+Problem Constraints
+
+1 <= N <= 105
+
+
+
+Input Format
+
+First and only argument is a character string A.
+
+
+
+Output Format
+
+Return an integer.
+
+
+
+Example Input
+
+Input 1:
+
+ A = "HelloUser1"
+Input 2:
+
+ A = "M1234"
+
+
+Example Output
+
+Output 1:
+
+ 9 
+Output 2:
+
+ 4 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int solve(final String A) {
+        int l=A.length();
+        int ncount=0;
+        int acount=0;
+        for(int i=0;i<l;i++){
+            char ch=A.charAt(i);
+            if ((ch>='A' && ch<='Z') || (ch>='a' && ch<='z')){
+                acount++;
+            }
+            if (ch>='0' && ch<='9'){
+                ncount++;
+            }
+        }
+        int max=Math.max(acount,ncount);
+        return max;
+    }
+}
+
