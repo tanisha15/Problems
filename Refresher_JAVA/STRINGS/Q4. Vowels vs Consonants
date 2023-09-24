@@ -1,0 +1,70 @@
+Problem Description
+Write a program to input T strings (S) from user and print count of vowels and consonants in it.
+
+
+
+Problem Constraints
+1 <= T <= 100
+
+1 <= S.size() <= 1000
+
+
+
+Input Format
+First line is T which means number of test cases.
+
+Each next T lines contain a lowercase string S.
+
+
+
+Output Format
+T lines each containing two space separated integers representing cont of vowels and consonants in input string.
+
+
+
+Example Input
+Input 1:
+
+2
+interviewbit
+scaler
+
+
+Example Output
+Output 1:
+
+5 7
+2 4
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner sc = new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=1;i<=t;i++){
+            String s=sc.next();
+            int vc=0;
+            int cc=0;
+            for(int j=0;j<s.length();j++){
+                char ch=s.charAt(j);{
+                    if (ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+                        vc++;
+                    }
+                    else{
+                        cc++;
+                    }
+                }
+            }
+            System.out.print(vc + " "+cc);
+            System.out.println();  
+        }   
+    }
+}
