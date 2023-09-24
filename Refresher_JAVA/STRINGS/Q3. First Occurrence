@@ -1,0 +1,80 @@
+Problem Description
+
+You are given a character string A, having length N and an integer ASCII code B.
+
+You have to tell the leftmost occurrence of the character having ASCII code equal to B, in A or report that it does not exist.
+
+                                                image
+
+
+Problem Constraints
+
+1 <= N <= 105
+
+A[i] ∈ ['a'-'z']
+
+97 <= B <= 122
+
+
+
+Input Format
+
+First argument is a character string A.
+
+Second argument is an integer B.
+
+
+
+Output Format
+
+If there exists an occurrence, return the leftmost index(0 - based), else return -1.
+
+
+
+Example Input
+
+Input 1:
+
+ A = "aabbcc"
+ B = 98 
+Input 2:
+
+ A = "abc"
+ B = 100
+
+
+Example Output
+
+Output 1:
+
+ 2 
+Output 2:
+
+ -1 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int solve(final String A, final int B) {
+        //return A.indexOf((char)B); //aayush's code
+
+
+        int l=A.length();
+        int pos=0;
+        int found=0;
+        for(int i=0;i<l;i++){
+            char ch=A.charAt(i);
+            if((int)ch==B){
+                pos=i;
+                found=1;
+                break;
+            }
+        }
+
+        if(found==1){
+        return pos;
+        }
+        return -1;
+    }
+}
