@@ -1,0 +1,39 @@
+Given 2 hashsets as input, print their common elements.
+
+mine code:
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+
+  public static void intersect(HashSet<Integer> hs1, HashSet<Integer> hs2){
+      HashSet<Integer> ans = new HashSet();
+      for(Integer element: hs1){
+        if(hs2.contains(element)){
+          ans.add(element);
+        }
+      }
+      System.out.print(ans);
+  }
+  
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int m=sc.nextInt();
+      HashSet<Integer> hs1 = new HashSet();
+      HashSet<Integer> hs2 = new HashSet();
+
+      for(int i=0;i<n;i++){
+        int element=sc.nextInt();
+        hs1.add(element);
+      }
+
+      for(int i=0;i<m;i++){
+        int element=sc.nextInt();
+        hs2.add(element);
+      }
+      intersect(hs1,hs2);
+  }
+}
+
