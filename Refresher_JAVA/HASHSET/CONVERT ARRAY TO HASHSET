@@ -1,0 +1,28 @@
+Given an integer array as input, add its elements to hashset and return the hashset.
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+
+  public static HashSet<Integer> convert(int arr[]){
+      HashSet<Integer> ans= new HashSet();
+      int l=arr.length;
+      for(int i=0;i<l;i++){
+        ans.add(arr[i]);
+      }
+      return ans;
+  }
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+      HashSet<Integer> hs = new HashSet();
+      hs=convert(arr);
+      System.out.print(hs);
+
+  }
+}
