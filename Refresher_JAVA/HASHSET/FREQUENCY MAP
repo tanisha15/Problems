@@ -1,0 +1,49 @@
+Given an integer aaray as input, return the corresponding frequency map.
+For e.g. ->
+Input: 7
+1 2 2 4 5 2 1
+
+Output: {1=2, 2=3, 4=1, 5=1}
+
+mine code:
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+
+  public static HashMap<Integer, Integer> freqmap(int arr[]){
+      HashMap<Integer,Integer> hm= new HashMap();
+      int l=arr.length;
+      int fr=0;
+      for(int i=0;i<l;i++){
+        fr=freq(arr,arr[i]);
+        hm.put(arr[i],fr);
+      }
+      return hm;
+  }
+
+  public static int freq(int arr[], int n){
+    int count=0;
+    int l=arr.length;
+    for(int i=0;i<l;i++){
+      if(arr[i]==n){
+        count++;
+      }
+    }
+    return count;
+  }
+  
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+      HashMap<Integer,Integer> hm= new HashMap();
+      hm=freqmap(arr);
+      System.out.println(hm);
+     
+  }
+}
