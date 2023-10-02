@@ -1,0 +1,43 @@
+Given an array of size N. Rotate the array from left to right (clockwise) K times.
+
+E.g: N=5 -> 1 2 3 4 5     K=3
+     K=1 -> 5 1 2 3 4
+     K=2 -> 4 5 1 2 3
+     K=3 -> 3 4 5 1 2
+
+
+lengthy approach:
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int k=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+      for(int i=1;i<=k;i++){
+        leftrotatebyone(i,arr);
+      }
+      for(int i=0;i<n;i++){
+        System.out.print(arr[i]+ " ");
+     }
+  }
+
+  public static void leftrotatebyone(int k, int arr[]){
+    int n=arr.length;
+    int temp[]=new int[n];
+    temp[0]=arr[n-1];
+    for(int i=n-1;i>0;i--){  // this line is very important, if we run the loop from 1 to n then you see that when you 
+    // are doing arr[i] = arr[i-1] then it means that arr[i] value is lost as it gets modified, therefore, when you run 
+    // from n-1 to 0 instead, the value does not get lost
+      arr[i]=arr[i-1];
+    }
+    arr[0]=temp[0];
+  }
+}
+
