@@ -1,6 +1,6 @@
 Given an array arr of size N, reverse it without extra space.
 
-mine code:
+mine code: this approach is wrong as the time complexity and space complexity is more.
 
 import java.util.*;
 import java.lang.*;
@@ -79,5 +79,69 @@ while (i<j){                                                             swap (a
   j--;
   }
 
-  Time complexity: O(n)
+
+
+  Time complexity: O(n/2) = O(n)
   Space complexity: O(1)
+
+
+Approach 1:
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      for(int i=0;i<n/2;i++){
+         swap(i, n-1-i, arr);
+      }
+
+      for(int i=0;i<n;i++){
+        System.out.print(arr[i]+ " ");
+      }
+  }
+
+  public static void swap(int a, int b, int arr[]){
+    int c=arr[a];
+    arr[a]=arr[b];
+    arr[b]=c;
+  }
+}
+
+Approach 2:
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int low=0;
+      int high=n-1;
+      while (low<high){
+        int temp=arr[low];
+        arr[low]=arr[high];
+        arr[high]=temp;
+        low++;
+        high--;
+      }
+      for(int i=0;i<n;i++){
+        System.out.print(arr[i]+ " ");
+      }
+  }
+}
+
+
