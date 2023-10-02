@@ -1,0 +1,38 @@
+Given an array arr and integers l and r. Reverse array from l to r.
+
+For e.g:
+
+N=5; arr=[1,2,3,4,5]
+now, l=1 and r=3
+arr= [1,4,3,2,5]
+
+It is the same as the reverse of array. Just change the low and high values to l and r.
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int l=sc.nextInt();
+      int r=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int low=l;
+      int high=r;
+      while (low<high){
+        int temp=arr[low];
+        arr[low]=arr[high];
+        arr[high]=temp;
+        low++;
+        high--;
+      }
+      for(int i=0;i<n;i++){
+        System.out.print(arr[i]+ " ");
+      }
+  }
+}
