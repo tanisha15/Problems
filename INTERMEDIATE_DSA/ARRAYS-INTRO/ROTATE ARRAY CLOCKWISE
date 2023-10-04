@@ -141,3 +141,8 @@ public class Main {
     }
   }
 }
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+IMP NOTE: Edge case: k>=n then the above code will give wrong answer, then calculate k by k%n
