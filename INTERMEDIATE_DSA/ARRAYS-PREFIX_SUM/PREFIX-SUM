@@ -1,0 +1,35 @@
+Code for prefix-sum
+
+mine code:
+
+Time complexity: O(n)
+Space complexity: O(n) -> because 1 new array is being created
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int sum=0;
+      int psum[]=new int[n];
+      for(int i=0;i<n;i++){
+        sum=sum+arr[i];
+        psum[i]=sum;
+      }
+
+      for(int i=0;i<n;i++){
+        System.out.print(psum[i]+ " ");
+      }
+  }
+}
+
+
+
+
