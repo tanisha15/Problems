@@ -1,0 +1,49 @@
+Given an array of N and Q queries. For every query, find sum of all even indexed elements from l to r.
+
+code using prefix array
+
+Time complexity: O(n+q) = O(n)
+Space complexity: O(n)
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int q=sc.nextInt();
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int psum[]=new int[n];
+      int sum=0;
+      for(int i=0;i<n;i++){
+        if(i%2==0){
+        sum=sum+arr[i];
+        psum[i]=sum;
+        }
+        else{
+          psum[i]=sum; //keep the odd indexes same as previous sum else you will get wrong output 
+        }
+      }
+
+      for(int i=0;i<n;i++){
+      System.out.print(psum[i]+ " ");
+      }
+      System.out.println();
+
+      for(int i=1;i<=q;i++){
+        int l=sc.nextInt();
+        int r=sc.nextInt();
+        if(l==0){
+          System.out.println(psum[r]);
+        }
+        else{        
+          System.out.println(psum[r]-psum[l-1]); 
+        }
+      }
+    }  
+  }
