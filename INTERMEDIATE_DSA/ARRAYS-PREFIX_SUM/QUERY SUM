@@ -1,0 +1,48 @@
+Given N elements and Q queries. For each query calculate sum of elements from L to R ( 0 based indexes).
+
+For eg: 
+
+A[]= -3 6 2 4 5 2 8 -9 3 1 
+
+Q=2
+
+L   R
+4   8  = 9
+3   7  = 10
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+mine code:
+
+Time complexity: O(n^2)
+Space complexity: O(1)
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int q=sc.nextInt();
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+      int sum=0;
+
+      for(int i=1;i<=q;i++){
+        int l=sc.nextInt();
+        int r=sc.nextInt();
+        sum=0;
+        for(int j=l;j<=r;j++){
+            sum=sum+arr[j];
+        }
+        System.out.println(sum+ " ");
+      }
+  }
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
