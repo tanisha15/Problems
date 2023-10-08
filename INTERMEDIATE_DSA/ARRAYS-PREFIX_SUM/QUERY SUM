@@ -102,10 +102,16 @@ public class Main {
       for(int i=1;i<=q;i++){
         int l=sc.nextInt();
         int r=sc.nextInt();
-        System.out.println(psum[r]-psum[l-1]); 
+        if(l==0){                                 //handle the case for 0
+          System.out.println(psum[r]);
+        }
+        else{        
+          System.out.println(psum[r]-psum[l-1]); 
+        }
       }
     }  
   }
+
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
