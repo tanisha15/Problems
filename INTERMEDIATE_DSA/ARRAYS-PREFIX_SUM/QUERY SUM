@@ -45,4 +45,71 @@ public class Main {
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+sir's approach:
+
+Now 
+
+sum[l,r] = ?
+sum[0,r] = sum[0,l-1] + sum[l,r]
+sum[l,r] = sum[0,r] - sum[0,l-1]
+         = pf[r] - pf[l-1]    // you can relate to the cricket question, if you are asked what are runs scored in 6th over? 
+                              // you calculate-> total runs scored in 6th over - total runs scored in 5th over
+
+where pf= prefix array
+
+Pseudo code:
+
+-> First find the prefix array
+
+pf[n]
+
+pf[0]=a[0]
+for(int i=1;i<n;i++){
+pf[i]=pf[i-1]+a[i]
+}
+
+-> find sum of elements from l to r
+
+for(int i=1;i<=q;i++){
+print (pf[r]-pf[l-1])
+}
+
+code:
+
+Time complexity: O(n)
+Space complexity: O(n) -> creating a new array
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int q=sc.nextInt();
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int psum[]=new int[n];
+      int sum=0;
+      for(int i=0;i<n;i++){
+        sum=sum+arr[i];
+        psum[i]=sum;
+      }
+
+      for(int i=1;i<=q;i++){
+        int l=sc.nextInt();
+        int r=sc.nextInt();
+        System.out.println(psum[r]-psum[l-1]); 
+      }
+    }  
+  }
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
 
