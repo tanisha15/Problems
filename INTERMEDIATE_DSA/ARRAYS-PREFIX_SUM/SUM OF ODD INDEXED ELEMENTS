@@ -19,7 +19,7 @@ public class Main {
         psum[i]=sum;
         }
         else{
-          psum[i]=sum; //keep the even indexes same as previous sum else you will get wrong output 
+          psum[i]=sum; //keep the even indexes same as previous sum else you will get wrong output and first element is even so sum is 0
         }
       }
 
