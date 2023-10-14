@@ -1,0 +1,31 @@
+Given an array of size N, count number of special index in the array.
+
+Note: Special index is after removing it, sum of even indexed elements= sum of odd indexed elements.
+
+For e.g:
+
+      0 1 2 3 4 5
+a[6]= 4 3 2 7 6 -2
+
+-> delete the 0th index
+
+0 1 2 3 4
+3 2 7 6 -2
+
+sum of odd indexes= 2+6=8
+sum of even indexes= 3+7-2=8
+
+Therefore, 0th index is a special index
+
+-> delete the 1st index
+
+0 1 2 3 4
+4 2 7 6 -2
+
+sum of odd indexes= 2+6=8
+sum of even indexes=4+7-2=9
+
+So 1 is not special index
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
