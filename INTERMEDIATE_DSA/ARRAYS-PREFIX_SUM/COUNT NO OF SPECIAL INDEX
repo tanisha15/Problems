@@ -29,3 +29,60 @@ So 1 is not special index
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Optimized Approach:
+
+Suppose we want to check if i is special index-
+
+-> Indices on left side of i will remain intact while indices on right side will change from odd-> even or from even->odd
+
+For e.g:
+
+   0 1 2 3 4 5 6
+A= 2 3 4 5 6 7 8
+
+On removing 3rd index element,
+
+   0 1 2 3 4 5
+A= 2 3 4 6 7 8
+
+Sum of odd indexed elements after removing index 3 = Sum of odd indexed elements from 0 to 2 + Sum of even indexed elements from 4 to 6
+
+So to answer the above question, do you actually have to create a new array with after removing the index? No
+
+You can check the same by performing the above operation on the original array itself
+
+Similarly, 
+
+Sum of even indexed elements after removing index 3 = Sum of even indexed elements from 0 to 2 + Sum of odd indexed elements from 4 to 6
+
+Steps:
+
+-> Create Pfe ( prefix array of sum of even indexed elements ) and Pfo ( prefix array of sum of odd indexed elements )
+-> For checking index i,
+Sodd = Sodd [0,i-1] + Seven [i+1,n-1]
+     = Pfo(i-1) + (Pfe[n-1] - Pfe[i])
+Similar for Seven
+
+Method:
+
+int specialcount(a[]){
+Pfo, Pfe  -------------------------------------> O(N)
+c=0;
+for(int i=0;i<n;i++){
+if (i==0){
+    Sodd= 0 + Pfe[n-1]
+    Seven= 0 + Pfo[n-1]
+}
+else{
+   Sodd = Sodd [0,i-1] + Seven [i+1,n-1]
+     = Pfo(i-1) + (Pfe[n-1] - Pfe[i])
+   Seven=
+}
+
+
+
+
+
+
+
+
