@@ -70,12 +70,12 @@ Pfo, Pfe  -------------------------------------> O(N)
 c=0;
 for(int i=0;i<n;i++){
 if (i==0){
-    Sodd= 0 + Pfe[1, n-1] -> Pfe(n-1) as take l=1 and r=n-1, to calculate we do pfe[r]-pfe[l-1]
-    Seven= 0 + Pfo[1, n-1]
+    Sodd= 0 + Pfe[n-1] -----------------> Pfe(n-1) as Pfe[1,n-1]------> take l=1 and r=n-1, to calculate we do pfe[r]-pfe[l-1]
+    Seven= 0 + Pfo[n-1]
 }
 else{
    Sodd = Sodd [0,i-1] + Seven [i+1,n-1]          
-     = Pfo(i-1) + (Pfe[n-1] - Pfe[i])  -------> taking the range
+     = Pfo[i-1] + (Pfe[n-1] - Pfe[i])  -------> taking the range--->  to calculate we do pfe[r]-pfe[l-1] and here r=n-1 and l=i+1
    Seven=
 }
 if (Sodd=Seven){
