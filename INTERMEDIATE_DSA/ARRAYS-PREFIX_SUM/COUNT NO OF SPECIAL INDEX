@@ -74,13 +74,21 @@ if (i==0){
     Seven= 0 + Pfo[n-1]
 }
 else{
-   Sodd = Sodd [0,i-1] + Seven [i+1,n-1]
-     = Pfo(i-1) + (Pfe[n-1] - Pfe[i])
+   Sodd = Sodd [0,i-1] + Seven [i+1,n-1]          
+     = Pfo(i-1) + (Pfe[n-1] - Pfe[i])  -------> taking the range
    Seven=
 }
 if (Sodd=Seven){
    c++;
 }
+
+
+Time complexity: O(N)
+Space complexity: O(N)
+
+Code:
+
+
 
 
 
