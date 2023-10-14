@@ -78,6 +78,9 @@ else{
      = Pfo(i-1) + (Pfe[n-1] - Pfe[i])
    Seven=
 }
+if (Sodd=Seven){
+   c++;
+}
 
 
 
