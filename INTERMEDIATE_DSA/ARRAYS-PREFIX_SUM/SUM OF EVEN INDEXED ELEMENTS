@@ -1,4 +1,4 @@
-Given an array of N and Q queries. For every query, find sum of all even indexed elements from l to r.
+Given an array of N and Q queries. For every query, find sum of all even indexed elements from l to r (range sum)
 
 code using prefix array
 
