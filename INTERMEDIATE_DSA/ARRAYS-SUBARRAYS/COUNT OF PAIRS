@@ -105,5 +105,13 @@ public class Main {
 }
 
 
+This is called carry forward. Similar to prefix sum only, but in prefix sum we store the total sum before i and after i in the form of an array 
+while in carry forward we store the total sum before i and after i in the form of a single variable.
+
+
+
+
+
+
 
 
