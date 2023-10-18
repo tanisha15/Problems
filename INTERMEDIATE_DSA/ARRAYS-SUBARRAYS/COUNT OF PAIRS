@@ -1,0 +1,83 @@
+Given string of lowercase characters, return the count of pairs (i,j) such that i<j; && s[i]='a' && s[j]='g'
+
+         0 1 2 3 4 5
+E.g: s = a b c g a g
+
+output -> (0,3), (0,5) and (4,5) -> 3
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+For every 'a' s we need total 'g' s in the right
+
+First approach:
+
+Time complexity: O(n^2)
+Space complexity: O(1)
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      String s=sc.next();
+      int count=0;
+      for(int i=0;i<s.length();i++){
+        if(s.charAt(i)=='a'){
+          for(int j=i+1;j<s.length();j++){
+            if(s.charAt(j)=='g'){
+              count++;
+            }
+          }
+        }
+      }
+      System.out.print(count);
+  }
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Optimized approach:
+
+start from the right and count the no of g's
+
+c=0
+which refers to the no of g's in the right side
+
+0   1    2    3    4    5    6
+a   g    a    g    a    k    g
+
+                             c=c+1
+                             c=1
+                   ans=ans+c=1
+              c=c+1
+              c=2
+        ans=3
+    c=c+1
+    c=3
+ans=6
+
+Time complexity: O(n)
+Space complexity: O(1)
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      String s=sc.next();
+      int ans=0;
+      int c=0;
+      for(int i=s.length()-1;i>=0;i--){
+        if(s.charAt(i)=='g'){
+          c++;
+        }
+        if(s.charAt(i)=='a'){
+          ans=ans+c;
+        }
+      }
+      System.out.print(ans);
+  }
+}
+
+Why we did the above? 
+
+Because anyways we need to check all the g's present on the right side, so directly we start the checking from right, and when we get any 'a', 
+we add the value of a with c
