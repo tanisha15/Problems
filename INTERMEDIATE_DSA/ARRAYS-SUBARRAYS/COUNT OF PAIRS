@@ -81,3 +81,29 @@ Why we did the above?
 
 Because anyways we need to check all the g's present on the right side, so directly we start the checking from right, and when we get any 'a', 
 we add the value of a with c
+
+
+You can traverse from left to right as well, then you need to keep the count of a and add to the ans of g
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      String s=sc.next();
+      int ans=0;
+      int c=0;
+      for(int i=0;i<s.length();i++){
+        if(s.charAt(i)=='a'){
+          c++;
+        }
+        if(s.charAt(i)=='g'){
+          ans=ans+c;
+        }
+      }
+      System.out.print(ans);
+  }
+}
+
+
+
+
