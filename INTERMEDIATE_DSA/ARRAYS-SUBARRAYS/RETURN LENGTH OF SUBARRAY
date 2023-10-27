@@ -8,7 +8,66 @@ max=9
 
 ans = 4
 
-------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Optimized approach:
+
+Time complexity: O(n^2)
+Space complexity: O(1)
+
+-> First find the max and min elements.
+-> Then find the max and min boolean values in the subarray and return the lenth containing the max and min values from the array
+-> length of subarray = j-i+1
+
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int arr[]=new int[n];
+     for(int i=0;i<n;i++){
+      arr[i]=sc.nextInt();
+     }
+
+     int min=arr[0];
+     for(int i=0;i<n;i++){
+      if(arr[i]<min){
+        min=arr[i];
+      }
+     }
+
+     int max=arr[0];
+     for(int i=0;i<n;i++){
+      if(arr[i]>max){
+        max=arr[i];
+      }
+     }
+
+      int ans=n;
+      for(int i=0;i<n;i++){
+        boolean maxi=false;
+        boolean mini=false;
+        for(int j=i;j<n;j++){
+          if (arr[j]==min){
+            mini=true;
+          }
+          if(arr[j]==max){
+            maxi=true;
+          }
+          if(maxi && mini){
+          if(ans>j-i+1){
+            ans=j-i+1;
+            break;
+          }
+          }
+        }
+     }
+  System.out.print(ans);
+  }
+}
+
+
 
 
 
