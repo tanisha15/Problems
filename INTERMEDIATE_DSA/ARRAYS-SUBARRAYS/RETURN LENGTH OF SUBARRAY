@@ -67,6 +67,27 @@ public class Main {
   }
 }
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+More optimized approach:
+
+Observations:
+
+In my final answer:
+
+1. Only 1 min and 1 max will be present.
+2. min and max values always lies at the corners.
+
+So you can try to find the max which is closest to the min.
+
+min.....max or max.....min
+
+-> For each min value find the closest max and vice versa. Carry forward will help in that.
+
+
+
+
+
 
 
 
