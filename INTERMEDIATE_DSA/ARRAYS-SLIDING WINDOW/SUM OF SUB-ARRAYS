@@ -1,1 +1,14 @@
-Given an array of integers, find the sum of all possible subarrays of the array and maintain max sum
+Given an array of integers, find the sum of all possible subarrays of the array and maintain max sum.
+
+For e.g:
+
+a[]=[1,2,3]
+
+sub array          max_sum
+[1]                1
+[1,2]              3
+[1,2,3]            6
+[2,3]              5
+[3]                3
+
+
