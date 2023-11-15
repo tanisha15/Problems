@@ -55,7 +55,24 @@ public class Main {
   }
 }
 
+Output:
+
+The array is:
+1 2 3 
+The subarray is:
+i=0
+1 -----------------> sum of the subarray=1
+1 2 -----------------> sum of the subarray=3
+1 2 3 -----------------> sum of the subarray=6
+i=1
+2 -----------------> sum of the subarray=2
+2 3 -----------------> sum of the subarray=5
+i=2
+3 -----------------> sum of the subarray=3
+maximum sum=6
+
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 
 
