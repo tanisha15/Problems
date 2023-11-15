@@ -1,4 +1,4 @@
-Given an array of integers, find the sum of all possible subarrays of the array and maintain max sum.
+Given an array of integers, find the sum of all possible subarrays of the array and maintain max sum. Print all the sums. There can be negatives also.
 
 For e.g:
 
@@ -10,5 +10,52 @@ sub array          max_sum
 [1,2,3]            6
 [2,3]              5
 [3]                3
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Brute Force:
+
+Time complexity: O(n^3)
+Space complexity: O(1)
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      System.out.println("The array is:");
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+        System.out.print(arr[i]+" ");
+      }
+      System.out.println();
+
+      int sum=0;
+      int max_sum=0;
+
+
+    System.out.println("The subarray is:");
+      for(int i=0;i<n;i++){
+        System.out.println("i="+ i);
+        for(int j=i;j<n;j++){
+          sum=0;
+          for(int k=i;k<=j;k++){
+            sum=sum+arr[k];
+            System.out.print(arr[k]+ " ");
+          }
+          System.out.print("-----------------> sum of the subarray=" + sum );
+          System.out.println();
+          max_sum=Math.max(max_sum,sum);
+        }
+      }
+      System.out.println("maximum sum=" + max_sum);
+  }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 
