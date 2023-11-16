@@ -114,6 +114,52 @@ public class Main {
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Using carry forward:
+
+E.g:
+
+There is an array 
+arr[] = [1 2 3 4]
+
+so on finding the sum of all the subarrays starting with index 0 we get
+
+for [0,0]---------> sum=1
+for [0,1]----------> sub array is [1,2] then sum=3
+for [0,2]----------> sub array is [1,2,3] then sum=6
+for [0,3]-----------> sub array is [1,2,3,4] then sum=10
+
+Now in this problem, we do not need only from starting index=0; therefore we need to run another outer loop starting from i=0 and start the j loop as j=i
+
+Time complexity: O(n^2)
+Space complexity: O(1)
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int max_sum=0;
+      int sum=0;
+      for(int i=0;i<n;i++){
+        sum=0;
+        for(int j=i;j<n;j++){
+          sum=sum+arr[j];
+        }
+        max_sum=Math.max(max_sum,sum);
+      }
+      System.out.print(max_sum);
+  }
+}
+
+
+
 
 
 
