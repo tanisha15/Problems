@@ -95,7 +95,45 @@ public class Main {
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Optimized Appraoch:
 
+Contribution technique (check the notebook to understand the formula being used)
+
+We are calculating the in how many subarrays the element at index i will be present
+
+The answer is (i+1) * (n-i)
+
+If we find the number of subarrays where each element comes, it means the element is present that many times.
+
+So we simply multiply:
+
+element * no of subarrays and store this in sum
+
+Time complexity: O(n)
+Space complexity: O(1)
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int sum=0;
+      for(int i=0;i<n;i++){
+        sum=sum+ (arr[i] * (i+1) * (n-i));
+      }
+      System.out.print(sum);
+      
+  }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
