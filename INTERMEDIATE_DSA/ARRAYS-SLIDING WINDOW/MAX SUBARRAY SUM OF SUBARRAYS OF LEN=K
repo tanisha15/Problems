@@ -132,6 +132,70 @@ public class Main {
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Carry Forward aka Sliding window
+
+E.g:
+
+k=5
+
+index =  0 1  2 3 4  5  6 7  8 9
+a[10] = -3 4 -2 5 3  -2 8 2 -1 4
+
+sum1 = [0,4] = -3+4+(-2)+5+3= 7
+sum2= = [1,5] = 7-(-3)+(-2) = 8
+sum3 = 8-4+8 =12
+
+
+so we are sliding the window and updating our sum
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      int n=sc.nextInt();
+      int k=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int pf[]=new int[n];
+      int psum=0;
+      for(int i=0;i<n;i++){
+        psum=psum+arr[i];
+        pf[i]=psum;
+      }
+
+
+      int sum=0;
+      for(int i=0;i<k;i++){
+        sum=sum+arr[i];
+      }
+
+      int max_sum=sum;
+      int j=k;  
+      int i=1;
+      while(j<n){
+        sum=sum-arr[i-1]+arr[j];
+        max_sum=Math.max(sum,max_sum);
+        i++;
+        j++;
+      }    
+      System.out.println(max_sum);
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
