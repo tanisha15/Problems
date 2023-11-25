@@ -84,4 +84,54 @@ public class Main {
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Using Prefix array:
+
+Time complexity: O(n)
+Space complexity: O(n)
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      int n=sc.nextInt();
+      int k=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int pf[]=new int[n];
+      int psum=0;
+      for(int i=0;i<n;i++){
+        psum=psum+arr[i];
+        pf[i]=psum;
+      }
+
+      int sum=0;
+      int max_sum=0;
+
+      for(int i=0;i<n-k+1;i++){
+        int j=i+k-1;
+        sum=0;
+        if(i==0){
+          sum=pf[j];
+        }
+        else{
+          sum=pf[j]-pf[i-1];
+        }
+        max_sum=Math.max(sum,max_sum);
+      }
+      System.out.print(max_sum);
+  }
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
 
