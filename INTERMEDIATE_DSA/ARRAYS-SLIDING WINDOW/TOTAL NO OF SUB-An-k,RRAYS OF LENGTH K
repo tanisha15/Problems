@@ -1,0 +1,73 @@
+Total no of sub-arrays with length k.
+
+[0,k]
+
+when k=1
+[0,0] [1,1] [2,2]...................... [n-1,n-1]
+
+when k=2
+[0,1] [1,2] [2,3].......................[n-2,n-1]
+.
+.
+.
+.
+[0,k-1] [1,k]...........................[n-k,n-1] = n-k+1
+
+Total sub-arrays of length k= n-k+1
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Problem:
+
+Given an array of size N, print start and end indices of subarrays of len k.
+
+For e.g- N=8
+
+So you will print-
+
+[0,2]
+[1,3]
+[2,4]
+[3,5]
+[4,6]
+[5,7]
+
+
+i   j       k=3
+
+0   2       ------> j=i+k-1
+1   3
+2   4
+3   5
+4   6
+5   7
+
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      int n=sc.nextInt();
+      int k=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n-k+1;i++){                              //you cannot take i<n because that is not the total no of subarrays, it will take up arrays 
+                                                             //which are not subarrays as well
+        arr[i]=sc.nextInt();
+      }
+
+      for(int i=0;i<n;i++){
+        int j=i+k-1;                                          // where i = start index and j = end index
+        System.out.print(i + " " +j);    
+        System.out.println();    
+      }
+  }
+}
+
+
+
+
+
+
+
