@@ -1,0 +1,87 @@
+Given an array of size N, print max sub array sum of subarrays of len=k.
+
+Input:
+8
+3
+5 6 7 8 9 1 2 4
+
+Output:
+18
+21
+24
+18
+12
+7
+
+To print the sum of all subarrays with len k=3
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      int n=sc.nextInt();
+      int k=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int sum=0;
+      int max_sum=0;
+
+      for(int i=0;i<n-k+1;i++){
+        int j=i+k-1;
+        sum=0;
+        for(int p=i;p<=j;p++){
+          sum=sum+arr[p];
+        }
+        System.out.println(sum);
+        //max_sum=Math.max(sum,max_sum);
+      }
+      //System.out.print(max_sum);
+  }
+}
+
+To print max_sum from the above sums
+
+Input: same as above
+Output: 24
+
+Time complexity: O(n^2)
+Space complexity : O(1)
+
+
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      int n=sc.nextInt();
+      int k=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+      }
+
+      int sum=0;
+      int max_sum=0;
+
+      for(int i=0;i<n-k+1;i++){
+        int j=i+k-1;
+        sum=0;
+        for(int p=i;p<=j;p++){
+          sum=sum+arr[p];
+        }
+        max_sum=Math.max(sum,max_sum);
+      }
+      System.out.print(max_sum);
+  }
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
