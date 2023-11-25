@@ -1,0 +1,5 @@
+-> sub arrays are contiguous, can be denoted using [start.end] indices.
+-> total subarrays = n * (n+1) / 2
+-> to print all possible sub arrays = O(n^3)
+-> sum of all sub arrays = O(n^2), O(n)
+-> total subrray of len k = n-k+1
