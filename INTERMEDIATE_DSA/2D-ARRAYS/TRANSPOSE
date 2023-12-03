@@ -18,4 +18,87 @@ For e.g:
 
 
 If you observe the diagonals remain the same in original matrix and the transpose matrix
+and arr[i][j] -> arr[j][i]
+and arr[i][i] -> arr[i][i]
 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Time complexity: O(n^2)
+Space complexity: O(1)
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int m=sc.nextInt();
+      int arr[][]=new int[n][m];
+      for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+          arr[i][j]=sc.nextInt();
+        }
+      }
+
+      for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+          swap(arr[i][j], arr[j][i]);
+          System.out.print(arr[i][j]+ " ");
+        }
+        System.out.println();
+      } 
+    }
+     public static void swap(int a, int b){
+        int c=a;
+        a=b;
+        b=c;
+      }
+}
+
+But you get back the same matrix as the original one. Why? because if you see in the above code, there is double swapping happening, we only need to traverse
+half of the matrix and not the entire one.
+
+This can be prevented if we make i<j;
+
+So, start j=i+1, then i will always be less than j
+
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int m=sc.nextInt();
+      int arr[][]=new int[n][m];
+      for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+          arr[i][j]=sc.nextInt();
+        }
+      }
+
+      for(int i=0;i<n;i++){
+        for(int j=i+1;j<m;j++){
+          swap(arr[i][j], arr[j][i]);
+        }
+      }
+
+      for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+          System.out.print(arr[i][j]+ " ");
+        }
+        System.out.println();
+      } 
+    }
+    
+     public static void swap(int a, int b){
+        int c=a;
+        a=b;
+        b=c;
+      }
+}
