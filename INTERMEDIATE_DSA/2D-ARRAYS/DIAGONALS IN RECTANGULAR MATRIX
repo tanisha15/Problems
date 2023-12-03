@@ -1,8 +1,21 @@
 Given matrix mat[N][M], print all the diagonals going from right to left. Diagonals should start from 0th row or M-1th columns.
 
-Using while loop:
+Input:
+2
+3
+3 4 5
+6 7 8
 
-Time complexity: O(n)
+Output:
+3 
+4 6 
+5 7 
+8
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Time complexity: O(n*m)
 Space complexity: O(1)
 
 // Online Java Compiler
@@ -22,44 +35,32 @@ public class Main {
         }
       }
 
-      int row=0;
-      int col=m-1;
-      while(row<n && col<m){
-        System.out.println(arr[row][col]);
-        row++;
-        col--;
-      }
-  }
-}
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      //print all diagonals from 0th row
 
-
-Using for loop:
-
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
-import java.util.*;
-import java.lang.*;
-
-public class Main {
-  public static void main(String[] args) {
-      Scanner sc=new Scanner(System.in);
-      int n=sc.nextInt();
-      int m=sc.nextInt();
-      int arr[][]=new int[n][m];
-      for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-          arr[i][j]=sc.nextInt();
+      for(int col=0;col<m;col++){
+        int row=0;
+        int c=col;
+        while(row<n && c>=0){
+          System.out.print(arr[row][c]+" ");
+          row++;
+          c--;
         }
+        System.out.println();
       }
+
+
+      //print all diagonals from m-1th column
       
-      
-      
-      int col=m-1;
-      for(int row=0;row<n;row++){
-        System.out.println(arr[row][col]);
-        col--;
+      for(int row=1;row<n;row++){
+        int r=row;
+        int c=m-1;
+          while(row<n && c>=0){
+          System.out.print(arr[row][c]+" ");
+          row++;
+          c--;
+        }
+        System.out.println();
       }
   }
 }
