@@ -1,0 +1,8 @@
+Given mat[n][n], rotate the matrix 90 degree clockwise from the top right and again space complexity: O(1) means you cannot create new matrix.
+
+1st row -> last row
+2nd row -> 2nd last row
+...
+
+
+
