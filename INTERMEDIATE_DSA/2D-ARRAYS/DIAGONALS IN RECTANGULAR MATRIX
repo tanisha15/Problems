@@ -1,0 +1,66 @@
+Given matrix mat[N][M], print all the diagonals going from right to left. Diagonals should start from 0th row or M-1th columns.
+
+Using while loop:
+
+Time complexity: O(n)
+Space complexity: O(1)
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int m=sc.nextInt();
+      int arr[][]=new int[n][m];
+      for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+          arr[i][j]=sc.nextInt();
+        }
+      }
+
+      int row=0;
+      int col=m-1;
+      while(row<n && col<m){
+        System.out.println(arr[row][col]);
+        row++;
+        col--;
+      }
+  }
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Using for loop:
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int m=sc.nextInt();
+      int arr[][]=new int[n][m];
+      for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+          arr[i][j]=sc.nextInt();
+        }
+      }
+      
+      
+      
+      int col=m-1;
+      for(int row=0;row<n;row++){
+        System.out.println(arr[row][col]);
+        col--;
+      }
+  }
+}
+
