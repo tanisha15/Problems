@@ -1,0 +1,21 @@
+Given mat[n][n], calculate transpose of the matrix without extra space.
+
+Transpose->
+0th row -> 0th col
+1st row -> 1st col
+2nd row -> 2nd col
+.
+.
+.
+nth row -> nth col
+
+For e.g:
+
+2 3 4 5                    2  3  5  9                  
+3 4 5 6    ------------->  3  4  6  2
+5 6 7 8                    4  5  7  1
+9 2 1 3                    5  6  8  3
+
+
+If you observe the diagonals remain the same in original matrix and the transpose matrix
+
