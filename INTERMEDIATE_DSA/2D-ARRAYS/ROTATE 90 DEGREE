@@ -4,5 +4,50 @@ Given mat[n][n], rotate the matrix 90 degree clockwise from the top right and ag
 2nd row -> 2nd last row
 ...
 
+First step -> transpose the matrix
+2nd step -> reverse each row of the matrix
+
+90 degree clockwise -> transpose + reverse
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Online Java Compiler
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int arr[][] = new int[n][m];
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        // Transpose the matrix in-place
+        for (int i = 0; i < n; i++) {
+            for (int j = i+1; j < m; j++) {
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
+            }
+        }
+
+        // Displaying the transposed matrix
+        for (int i = 0; i < m; i++) {
+            for (int j = n-1; j >=0 ; j--) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
 
 
