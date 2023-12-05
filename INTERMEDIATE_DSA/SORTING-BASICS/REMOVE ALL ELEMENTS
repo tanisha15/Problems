@@ -1,0 +1,32 @@
+Given N array elements, at every step remove an array element.
+Cost to remove an element: sum of all elements present in the array.
+Find the minimum cost to remove the elements
+Note: first calculate the cost and then remove the element
+
+For e.g:
+
+a[3] [2 1 4]
+remove 2: 7 (2+1+4)
+remove 1: 5 (1+4)
+remove 4: 4
+--------------------------
+total:     16
+
+remove 1: 7 (2+1+4)
+remove 2: 6
+remove 4: 4
+----------------------------
+total: 17
+
+remove 4: 7
+remove 2: 3
+remove 1: 1
+------------------------
+total:    11
+
+So 11 is the minimum one
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
