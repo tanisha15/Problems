@@ -1,0 +1,11 @@
+Given N elements, calculate no of noble integers. An element in array is called noble iff no of elements < element = element itself.
+{Data is distinct}
+
+E.g 
+a[] = -1 -5 3 5 -10 4
+less = 2  1 3 5  0  4
+
+count=3
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
