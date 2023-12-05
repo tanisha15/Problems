@@ -26,7 +26,16 @@ total:    11
 
 So 11 is the minimum one
 
+So you can even observe that we are removing in descending order, then we get the minimum value
+
+Deleting element by element in decreasing order to get the minimum cost
+
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
 
 
 
