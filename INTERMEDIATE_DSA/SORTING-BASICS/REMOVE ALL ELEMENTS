@@ -32,6 +32,33 @@ Deleting element by element in decreasing order to get the minimum cost
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+a[4] = {a,b,c,d}
+
+remove a: a+b+c+d
+remove b: b+c+d
+remove c: c+d
+remove d: d
+
+Total cost: a+2b+3c+4d
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Pseudo code:
+
+int calculatecost (a[], n){
+sort desc(a)
+ans=0
+for(i=0;i<n;i++){
+ans+=(i+1)*a[i]
+}
+return a
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
 
 
 
