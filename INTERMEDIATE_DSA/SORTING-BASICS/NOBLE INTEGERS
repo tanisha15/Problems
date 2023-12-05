@@ -9,3 +9,51 @@ count=3
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Pseudocode:
+
+Brute force:
+
+def FindNoble (a[], n)
+ans=0;
+for(i=0;i<n;i++){
+    count=0
+    for(j=0;j<n;j++){
+        if(a[j]<a[i])
+          count++;
+      }
+  if (count==a[i]){
+      ans++
+  }
+return ans;
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Optimized:
+
+TC: O(NlogN)
+SC: O(1)
+
+Sort the array in ascending order
+Then count=i (all the elements behind)
+if(a[i]==i)
+then a[i] is noble
+
+def FindNoble(a[],n){
+sort (a,ans)
+ans=0
+for(i=0;i<n;i++){
+    if(a[i]==i){
+      ++ans;
+    }
+}
+return ans
+}
+
+
+
+
+
+
+
+
+
